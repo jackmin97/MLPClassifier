@@ -18,6 +18,7 @@ We define the target variable which is the future one-day returns.
 We drop the NaN values and store the predictor variables in X and target variable in y. The target variable is:
 - 1 if the one-day future returns are positive and
 - 0 if the returns are negative or zero.
+
 The future returns for the last day in our dataset will not be calculated (since data for the next day is not known). Thus, the corresponding values will also be dropped when we use the dropna function. This can be overlooked as we will only be using the dataset to 'train' our model.
 
 The trained model will be used on the new input data (appropriately transformed as the X input), and by using the predict method we can obtain the model predicted value.
@@ -67,7 +68,7 @@ We compute the strategy CAGR in train and test dataset.
 #### 6.6 Accuracy of the neural network classifier
 The classification_report function from sklearn.metrics package is used to analyze the performance of the neural network. The classification_report takes as input the actual output and the predicted output.
 
-The output of classification report
+The output of classification report: 
 1. Precision: tp / (tp + fp)
 where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
 2. Recall: tp / (tp + fn)
